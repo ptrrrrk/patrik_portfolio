@@ -28,7 +28,7 @@ def add_profile_picture(image_path):
     )
 
 # Add circular profile picture in the sidebar
-add_profile_picture(r"D:\Data Science\Projects\StreamLit_Portfolio\DSC06681.png")
+add_profile_picture(r"profile_picture.jpg")
 
 # Sidebar - About Section
 with st.sidebar:
@@ -42,7 +42,7 @@ with st.sidebar:
     st.markdown("[Kaggle](https://www.kaggle.com/patrikkeszcze)")
 
     # Download Resume Button
-    with open(r"D:\Data Science\Projects\StreamLit_Portfolio\Keszőcze Patrik CV.pdf", "rb") as file:
+    with open(r"Keszőcze Patrik CV.pdf", "rb") as file:
         btn = st.download_button(label="Download Resume", data=file, file_name="Resume.pdf", mime="application/pdf")
 
 # Navigation Menu
