@@ -46,7 +46,7 @@ with st.sidebar:
         btn = st.download_button(label="Download Resume", data=file, file_name="Resume.pdf", mime="application/pdf")
 
 # Navigation Menu
-selected = option_menu(None, ["Projects", "Experience", "Education", "Contact"],
+selected = option_menu(None, ["Projects", "Experience", "Education"],
                        icons=['kanban', 'briefcase', 'book', 'envelope'],
                        menu_icon="cast", default_index=0, orientation="horizontal",
                        styles={
@@ -126,17 +126,3 @@ if selected == "Education":
         - Economics of sustainability
         - Academic Research
         """)
-
-# Contact Section
-if selected == "Contact":
-    st.title("Contact Me")
-    contact_form = """
-    <form action="https://formsubmit.co/YOUREMAIL@EMAIL.COM" method="POST">
-     <input type="hidden" name="_captcha" value="false">
-     <input type="text" name="name" placeholder="Your name" required>
-     <input type="email" name="email" placeholder="Your email" required>
-     <textarea name="message" placeholder="Your message here"></textarea>
-     <button type="submit">Send</button>
-</form>
-    """
-    st.markdown(contact_form, unsafe_allow_html=True)
