@@ -56,7 +56,7 @@ selected = option_menu(None, ["Projects", "Experience", "Education"],
 # Projects Section
 if selected == "Projects":
     st.title("Projects")
-    st.write("""
+    st.mardown("""
     ### Project 1: Armed Conflicts in Isreal and Palestine 2016-2024 Data Visualization Project
     https://israel-palestine-armed.streamlit.app/
     For this project I used currated data from ACLED. On the left side the user can adjust the filters in order to see the changes on the map and the diagram. 
