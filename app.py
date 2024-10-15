@@ -4,7 +4,7 @@ from PIL import Image
 from streamlit_option_menu import option_menu
 
 # Set up the page layout and title
-st.set_page_config(page_title="Keszőcze Patrik", layout="wide")
+st.set_page_config(page_title="Keszőcze Patrik", layout="wide", page_icon=":small_orange_diamond:")
 
 # Function to create a circular image and keep it in the top-left corner
 def add_profile_picture(image_path):
@@ -20,6 +20,7 @@ def add_profile_picture(image_path):
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: top;  
         }}
         </style>
         <img src="data:image/jpeg;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}" class="profile-pic">
@@ -56,75 +57,67 @@ selected = option_menu(None, ["Projects", "Experience", "Education"],
 # Projects Section
 if selected == "Projects":
     st.title("Projects")
-    st.write("""
-    ###1.: Armed Conflicts in Isreal and Palestine 2016-2024 - Interactive Data Visualization Project
-    https://israel-palestine-armed.streamlit.app/
-    For this project I used currated data from ACLED. On the left side the user can adjust the filters in order to see the changes on the map and the diagram. 
-    The source code can be found on my GitHub page.
-    
-    ### Project 2: 
-    - 
-    -
-    ### Project 3: Sales Analysis for XYZ Company
-    - 
-    -
+    st.markdown("#### [Armed Conflicts in Israel and Palestine 2016-2024 - Interactive Data Visualization Project](https://israel-palestine-armed.streamlit.app/)")
+    st.write(""" 
+    For this project, I utilized curated data from ACLED and employed Python libraries such as Streamlit, Pandas, Plotly, 
+    and Seaborn. Users can adjust the filters on the left side to observe changes in both the map and the diagram. The source 
+    code is available on my GitHub page. This project is still in progress, as my long-term objective is to create a valuable 
+    tool that anyone can use to explore this complex and sensitive topic, irrespective of political perspectives. Please note 
+    that this work is entirely personal and not affiliated with my current or previous employers.
     """)
+    st.write(""" More projects coming soon""")
 
 # Experience Section
 if selected == "Experience":
     st.title("Experience")
 
     # UNHCR Experience
-    st.subheader("ADMINISTRATIVE SUPPORT ASSISTANT – UNHCR, STABILISATION TEAM")
-    st.write("Budapest // GSC1 // September 2023 - Present")
-    st.write("""
-    I am a member of the Stabilization team at UNHCR working with PROMS. My responsibilities include overseeing PFRs from 
+    st.subheader("Finance Clerk, Administrative Support Assistant – UNHCR, Stabilization Team")
+    st.write("Budapest // September 2023 - Present")
+    st.write(""" I am a member of the Stabilization team at UNHCR working with PROMS. My responsibilities include overseeing PFRs from 
     their inception to budget revisions and preparing them for execution through Oracle's executable files. 
     I resolve unexpected issues quickly, helping streamline the process. Additionally, I am well-versed in manual 
-    invoice creation procedures to support financial activities.
+    invoice creation procedures to support financial activities. I am part of this team since Cloud ERP go-live.
     """)
 
     # Data Analyst Trainee
-    st.subheader("DATA ANALYST TRAINEE – ELTE TinLab")
+    st.subheader("Data Analyst Trainee – ELTE TinLab")
     st.write("Budapest // April 2023 – June 2023")
-    st.write("""
-    - Data Analysis using SPSS, Excel, and PowerBI
+    st.write(""" - Data Analysis using SPSS, Excel, and PowerBI
     - Reducing sampling errors
     - Report writing, data visualization
     - Tackling statistical methodological problems
     """)
 
-    # Collage Manager, Secretary
-    st.subheader("COLLAGE MANAGER, SECRETARY – Társadalomelméleti Kollégium")
+    # College Manager, Secretary
+    st.subheader("College Manager Secretary – College For Advanced Social Science")
     st.write("Budapest // September 2022 - August 2023")
-    st.write("""
-    - Preparing and monitoring yearly budget
+    st.write(""" - Preparing and monitoring yearly budget
     - Tender writing
     - Administrative tasks
     - Coordinating the operative teams
     """)
 
     # Game Master
-    st.subheader("GAME MASTER – Időcsapda Escaperoom")
+    st.subheader("Game Master – Időcsapda Escaperoom")
     st.write("Budapest // September 2019 – July 2023")
-    st.write("""
-    - Conducting games, team building events
+    st.write(""" - Conducting games, team building events
     - Online invoice processing
-    - Developing dashboard about monthly income
+    - Developing dashboard about monthly incomes
     """)
 
 # Education Section
 if selected == "Education":
     st.title("Education")
-    st.write("""
-    ### Eötvös Lóránd University, Sociology Bsc, 2019-2023
-    - Statistics, Data visualization 
+    st.write(""" ### Eötvös Lóránd University, Sociology BSc, 2019-2023
+    - Statistics, Data visualization, Hypothesis testing
+    - Quantitative and Qualitative academic research
     - Political economy
     - Urban Sociology
     """)
-    st.write("""
-        ### Collage for Advanced Social Science, 2019-2022
-        - Macroeconomics
-        - Economics of sustainability
-        - Academic Research
-        """)
+    st.write(""" ### College for Advanced Social Science, 2019-2022
+    - Macroeconomics
+    - Data Analytics
+    - Economics of sustainability
+    - Academic Research
+    """)

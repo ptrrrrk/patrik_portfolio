@@ -1,8 +1,7 @@
 # Patrik's Data Science Portfolio Streamlit App
 
-This is the source code for my portfolio webapp.
-You can check out the app itself here: 
-This is my LinkedIN in case you want to get in touch: 
-You can find me also on Kaggle:
+This is the source code for my portfolio webapp. If you wish to use it as a template feel free, make sure to check out the dependencies.
+- You can check out the app itself here: https://keszoczepatrik.streamlit.app/
+- You can find me also on Kaggle: https://www.kaggle.com/patrikkeszcze
 
 
